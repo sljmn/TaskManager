@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Taskmanager 1.0</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top bg-dark bg-light">
+    <a class="navbar-brand " href="/">Taskmanager 1.0</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#changelog">Changelog</a>
+        </li> -->
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <p class="lead">Enter your task and finish them whenever you want.</p>
+
+      <form onsubmit="return false;">
+        <div class="form-group ">
+          <label for="exampleFormControlInput1">What do you want to do?</label>
+          <input type="text" class="form-control " id="createTaskInput" placeholder="Buy milk.."
+            value="prevent time with this task">
+          <input type="text" class="form-control col-md-4" id="dueDateInput" placeholder="Due date">
+
+          <button type="submit" id="submitTask" class="btn btn-primary btn-lg">Create task</button>
+          <div class="taskcounterContainer">
+            <span class="taskcountSpan">0</span> task(s) left
+          </div>
+
+
+        </div>
+
+      </form>
+
+    </div>
+
+
+  </div>
+
+  <div class="list-group container mb-3">
+
+    <h2 class="container "> Things to do</h2>
+
+    <ul id="items" class="taskList">
+      <!-- <li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+        <span class="item-text">This your first task. Edit or delete</span>
+
+        <div>
+          <button type="button" class="btn btn-secondary btn-sm edit-btn justify-content-between">Edit task </button>
+          <button type="button" class="btn btn-outline-danger btn-sm delete-btn justify-content-between">Delete task
+          </button>
+        </div>
+      </li> -->
+
+
+
+
+    </ul>
+
+
+
+    <div id="modalContainer">
+      <div class="modalContent">
+        <h3>Change your task</h3>
+        <input type="text" class="form-control" id="updateTaskInput" placeholder="Change your task...">
+        <button type="submit" id="updateTask" class="btn update-btn btn-primary btn-md">Update task</button>
+        <button type="submit" id="closeModal" class="btn close-modal-btn btn-secondary btn-md">Nevermind</button>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.1/Sortable.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="app.js"></script>
+
+
+
+</body>
+
+</html>
