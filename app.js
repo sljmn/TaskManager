@@ -25,13 +25,14 @@ submitTask.addEventListener("click", function (event) {
     // let addTaskToList = document.querySelector(".list-group-item-action");
     let insertTaskHtml = `<li class="list-group-item taskCounter list-group-item-action d-flex align-items-center justify-content-between">
   <span class="item-text">${newTask}</span> 
-  <span class="dueDate">Due date: ${setDuedate}</span>
+  
 
  
   <div>
  
     <button type="button" id="edit-button"  class="btn btn-secondary edit-btn btn-sm justify-content-between">Edit task </button>
     <button type="button" class="btn btn-outline-danger btn-sm delete-btn justify-content-between">Delete task </button>
+    <span class="dueDate">Due date: ${setDuedate}</span>
     
   </div>
 </li>`;
