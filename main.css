@@ -24,6 +24,7 @@
 
 .taskList li {
   cursor: move;
+  
 }
 
 a.list-group-item.list-group-item-action {
@@ -92,8 +93,9 @@ a.list-group-item.list-group-item-action {
 }
 .noTasksLeft img{
 width: 200px;
-margin-top:80px;
+padding-top:80px;
 display: block;
+margin: 0 auto;
 
 
 }
@@ -103,5 +105,4 @@ display: block;
 .jumbotronBlack {
   background-color: #101518;
 }
-
 

@@ -42,6 +42,8 @@ submitTask.addEventListener("click", function (event) {
     createTaskInputField.focus();
     taskCounter();
     checkForTasks();
+
+    if(darkmode == true){enableDarkMode()}
  
    
   } else {
@@ -167,33 +169,67 @@ flatpickr("#dueDateInput", {
 
 // DARKMODE
 let jumbotron = document.querySelector(".jumbotron")
-let switchColors = document.getElementById('switchColors')
+let darkModeBtn = document.getElementById('darkMode')
+let lightModeBtn = document.getElementById('ligtMode')
 let modalContent = document.querySelector('.modalContent')
 
 
-switchColors.addEventListener('click', function(){
+darkModeBtn.addEventListener('click', function(){
   enableDarkMode()
 })
 
+let darkmode = false
+
 function enableDarkMode(){
+darkmode = true
 
 document.body.style.backgroundColor = "#101518"
 document.body.style.color = "#aeaeae"
 jumbotron.classList.add("jumbotronBlack")
 modalContent.style.backgroundColor = "#101518"
 
-document.querySelectorAll('input').forEach( input => {
+document.querySelectorAll('input[type=text]').forEach( input => {
   input.style.backgroundColor = "#101518"
-});
+})
+
+let tasklistLiElement = document.querySelectorAll('.taskList li')
 
 
-
-
-document.querySelectorAll("li.list-group-item.taskCounter.list-group-item-action.d-flex.align-items-center.justify-content-between").forEach( listGroup => {
+tasklistLiElement.forEach( listGroup => {
   listGroup.style.backgroundColor = "#101518"
   listGroup.style.border = "1px solid lightgray"
-});
+})
+
+
 
 }
+
+lightModeBtn.addEventListener('click', function(){
+  enablelightMode()
+})
+
+function enablelightMode(){
+  darkmode = false
+  
+  document.body.style.backgroundColor = "#fff"
+  document.body.style.color = "#000"
+  jumbotron.classList.remove("jumbotronBlack")
+  modalContent.style.backgroundColor = "#FEFEFE"
+  
+  document.querySelectorAll('input[type=text]').forEach( input => {
+    input.style.backgroundColor = "#FEFEFE"
+  })
+  
+  let tasklistLiElement = document.querySelectorAll('.taskList li')
+  
+  
+  tasklistLiElement.forEach( listGroup => {
+    listGroup.style.backgroundColor = "#fff"
+    listGroup.style.border = "1px solid #DFDFDF"
+  })
+  
+  
+  
+  }
 
 
