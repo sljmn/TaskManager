@@ -41,7 +41,9 @@ submitTask.addEventListener("click", function (event) {
     taskArr.push(newTask)
     createTaskInputField.focus();
     taskCounter();
-    checkForZeroTasks();
+    checkForTasks();
+ 
+   
   } else {
     alert("Enter a task first!");
   }
@@ -96,6 +98,8 @@ document.querySelector("#items").addEventListener("click", function (e) {
       e.target.parentElement.parentElement.remove();
     taskCounter();
     checkIfNoTasks()
+    
+    
   }
 });
 
@@ -109,20 +113,11 @@ function taskCounter() {
 
 }
 
-function checkForZeroTasks(){
-let thingsToDoTitle = document.querySelector('h2.container')
-let allDoneImg = document.querySelector('.allDoneImg')
-let noTasksLeft = document.querySelector('.noTasksLeft')
 
-if(taskCounter.length < 1){
-  thingsToDoTitle.innerHTML = "Things to do"
-  allDoneImg.style.display= "none"
-} 
-
-
-}
 
 function checkIfNoTasks(){
+  let taskCounter = document.querySelectorAll(".taskCounter");
+
   let thingsToDoTitle = document.querySelector('h2.container')
   let allDoneImg = document.querySelector('.allDoneImg')
   let noTasksLeft = document.querySelector('.noTasksLeft')
@@ -131,6 +126,21 @@ function checkIfNoTasks(){
   
     allDoneImg.style.display= "block"
 }}
+
+function checkForTasks(){
+  let taskCounter = document.querySelectorAll(".taskCounter");
+
+  let thingsToDoTitle = document.querySelector('h2.container')
+  let allDoneImg = document.querySelector('.allDoneImg')
+  let noTasksLeft = document.querySelector('.noTasksLeft')
+  
+  if(taskCounter.length >= 1){
+    thingsToDoTitle.innerHTML = "Things to do"
+    allDoneImg.style.display= "none"
+  } 
+  
+  
+  }
 
 
 let modalContainer = document.getElementById("modalContainer");
@@ -154,3 +164,36 @@ flatpickr("#dueDateInput", {
 
 
 });
+
+// DARKMODE
+let jumbotron = document.querySelector(".jumbotron")
+let switchColors = document.getElementById('switchColors')
+let modalContent = document.querySelector('.modalContent')
+
+
+switchColors.addEventListener('click', function(){
+  enableDarkMode()
+})
+
+function enableDarkMode(){
+
+document.body.style.backgroundColor = "#101518"
+document.body.style.color = "#aeaeae"
+jumbotron.classList.add("jumbotronBlack")
+modalContent.style.backgroundColor = "#101518"
+
+document.querySelectorAll('input').forEach( input => {
+  input.style.backgroundColor = "#101518"
+});
+
+
+
+
+document.querySelectorAll("li.list-group-item.taskCounter.list-group-item-action.d-flex.align-items-center.justify-content-between").forEach( listGroup => {
+  listGroup.style.backgroundColor = "#101518"
+  listGroup.style.border = "1px solid lightgray"
+});
+
+}
+
+

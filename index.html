@@ -8,28 +8,22 @@
   <title>Taskmanager 1.0</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
+  <link id="defaultCSS" rel="stylesheet" href="main.css">
+ 
+
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg sticky-top bg-dark bg-light">
     <a class="navbar-brand " href="/">Taskmanager 1.0</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="darkmode ">
+    <button type="button" id="switchColors"class="btn btn-secondary" >
+        Switch collors
+      </button>
+    </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <!-- <li class="nav-item active">
-          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#changelog">Changelog</a>
-        </li> -->
-
-      </ul>
+    
 
     </div>
   </nav>
@@ -69,19 +63,11 @@
       <div class="noTasksLeft ">
 
     
-        <img src="./images/all-done.svg" class="allDoneImg" alt="Sun">
+        <img src="https://svgshare.com/i/Ge8.svg" class="allDoneImg" alt="Sun">
 
 
       </div>
-      <!-- <li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
-        <span class="item-text">This your first task. Edit or delete</span>
-
-        <div>
-          <button type="button" class="btn btn-secondary btn-sm edit-btn justify-content-between">Edit task </button>
-          <button type="button" class="btn btn-outline-danger btn-sm delete-btn justify-content-between">Delete task
-          </button>
-        </div>
-      </li> -->
+  
 
 
 
@@ -104,7 +90,9 @@
 
   </div>
 
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.1/Sortable.js"></script>
 
