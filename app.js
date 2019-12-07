@@ -41,6 +41,7 @@ submitTask.addEventListener("click", function (event) {
     taskArr.push(newTask)
     createTaskInputField.focus();
     taskCounter();
+    checkForZeroTasks();
   } else {
     alert("Enter a task first!");
   }
@@ -94,6 +95,7 @@ document.querySelector("#items").addEventListener("click", function (e) {
     if ((taskUpdate = confirm("Do you want to delete this task permanently??")))
       e.target.parentElement.parentElement.remove();
     taskCounter();
+    checkIfNoTasks()
   }
 });
 
@@ -102,11 +104,33 @@ function taskCounter() {
   let taskcountSpan = document.querySelector(".taskcountSpan");
   taskcountSpan.innerHTML = taskCounter.length;
 
+  
 
 
 }
 
+function checkForZeroTasks(){
+let thingsToDoTitle = document.querySelector('h2.container')
+let allDoneImg = document.querySelector('.allDoneImg')
+let noTasksLeft = document.querySelector('.noTasksLeft')
 
+if(taskCounter.length < 1){
+  thingsToDoTitle.innerHTML = "Things to do"
+  allDoneImg.style.display= "none"
+} 
+
+
+}
+
+function checkIfNoTasks(){
+  let thingsToDoTitle = document.querySelector('h2.container')
+  let allDoneImg = document.querySelector('.allDoneImg')
+  let noTasksLeft = document.querySelector('.noTasksLeft')
+  if(taskCounter.length == 0){
+    thingsToDoTitle.innerHTML = "You are all done for now, why not add some tasks?"
+  
+    allDoneImg.style.display= "block"
+}}
 
 
 let modalContainer = document.getElementById("modalContainer");

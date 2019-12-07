@@ -85,3 +85,15 @@ a.list-group-item.list-group-item-action {
   text-align: left;
 
 }
+.noTasksLeft{
+  margin-left: -25px;
+  margin-top:10px;
+
+}
+.noTasksLeft img{
+width: 200px;
+margin-top:80px;
+display: block;
+
+
+}
